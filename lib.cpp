@@ -1,13 +1,17 @@
-#include<iostream>
 #include "lib.h"
-using namespace std;
-float max(float array[], int dim){
-  for (int i=0; i<dim; i++){
-        if (array[0]>array[i]){
-        }
-        else{
-            array[0]=array[i];
+
+bool cerca(char lista[10][20], int &posizione, char target[]){
+    for(int i=0;i<10;i++){
+        for(int j=0;j<20;j++){
+            if(lista[i][j] != target[j]){
+                j = 20;
+            }else{
+              if(j==19){
+                  posizione = i;
+                  return true;
+              }
+            }
         }
     }
-    return array[0];
+    return false;
 }
